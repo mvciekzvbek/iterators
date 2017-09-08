@@ -1,17 +1,17 @@
 let person = {
-	name: "Maciej",
-	surname: "Zabek",
+	name: 'Maciej',
+	surname: 'Zabek',
 	age: 23,
-	profession: "Programmer"
-}
+	profession: 'Programmer'
+};
 
-person[Symbol.iterator] = function *(){
+person[Symbol.iterator] = function * () {
 	let properties = Object.keys(this);
 
-	for (let p of properties){
+	for (let p of properties) {
 		yield this[p];
 	}
-}
+};
 
 for (let properties of person) {
 	console.log(properties);
