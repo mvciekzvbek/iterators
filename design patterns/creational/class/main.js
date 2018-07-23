@@ -1,16 +1,4 @@
-var Task = function (name) {
-	this.name = name;
-	this.completed = false;
-
-	this.complete = function () {
-		console.log('Completing task: ' + this.name);
-		this.completed = true;
-	};
-
-	this.save = function () {
-		console.log('Saving task: ' + this.name);
-	};
-};
+var Task = require('./task');
 
 var task1 = new Task('Prepare Constructor Pattern demonstration');
 var task2 = new Task('Prepare Module Pattern demonstration');
