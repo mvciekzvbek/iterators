@@ -48,11 +48,14 @@ var myTask = new Task({
 	completed: false
 });
 
+// instead of ugly code below we created a wrapper which is a lot cleaner
+
 // TaskService.complete(myTask);
 // if (myTask.completed === true) {
 // 	TaskService.setCompleteDate(myTask);
 // 	TaskService.notifyCompletion(myTask, myTask.user);
 // 	TaskService.save(myTask);
 // }
+
 TaskServiceWrapper.completeAndNotify(myTask);
 console.log(myTask);
