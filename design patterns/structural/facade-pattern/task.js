@@ -1,3 +1,14 @@
+/**
+ * Facade pattern
+ * 
+ * Used to provide simplified interface to a complicated system
+ * 
+ * - it hides the chaos from us
+ * - simplifies the interface
+ * - eg. jquery
+ *  
+ */
+
 var Task = function (data) {
 	this.name = data.name;
 	this.priority = data.priority;

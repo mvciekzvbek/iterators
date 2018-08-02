@@ -143,7 +143,10 @@ ObservableTask.prototype.save = function () {
     Task.prototype.save.call(this);
 }
 
-var task1 = new ObservableTask({name: 'create demo for constructors', user: 'Jon'})
+var task1 = new ObservableTask({
+    name: 'create demo for constructors', 
+    user: 'Jon'
+})
 
 var ns = new notificationService();
 var ls = new loggingService();

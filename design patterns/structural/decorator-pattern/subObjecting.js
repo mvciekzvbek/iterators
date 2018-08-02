@@ -1,3 +1,14 @@
+/**
+ * Decorator pattern
+ * 
+ * Used to add new functionality to an existing object without being obtrusive
+ * 
+ * - more complete inheritance
+ * - wraps an object
+ * - protect existing object
+ * 
+ */
+
 var Task = function (name) {
     this.name = name;
     this.completed = false;

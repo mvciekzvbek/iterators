@@ -4,7 +4,7 @@ var Task = function (data) {
     this.project = data.project;
     this.user = data.user;
     this.completed = data.completed;
-}
+};
 
 Task.prototype.complete = function () {
     console.log('completing task: ' + this.name);
