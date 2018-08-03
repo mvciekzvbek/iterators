@@ -36,19 +36,34 @@ var auditingService = function () {
     };
 };
 
+/**
+ * Mediator module
+ */
 var mediator = (function () {
+
     var channels = {};
 
+    /**
+     * Subscribes for specific channel
+     * @param {*} channel 
+     * @param {*} context 
+     * @param {*} func 
+     */
     var subscribe = function (channel, context, func) {
         if (!mediator.channels[channel]) {
             mediator.channels[channel] = [];
         }
+        // pushes object with context and callback function to channel array
         mediator.channels[channel].push({
             context: context, 
             func: func
         });
     }
-
+    
+    /**
+     * Executes subscribers callbacks
+     * @param {*} channel 
+     */
     var publish = function (channel) {
         if (!this.channels[channel]) {
             return false;
