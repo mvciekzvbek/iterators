@@ -3,6 +3,12 @@ const getCurrentTime = () => new Date()
 const clear = () => console.clear()
 const log = message => console.log(message)
 
+
+/**
+ * Functions for transforming data - these three functions will be used to mutate the Date object into object that can be used for our clock
+ */
+
+
 const serializeClockTime = date => 
     ({
         hours: date.getHours(),
@@ -24,6 +30,11 @@ const appendAMPM = clockTime =>
         ampm: (clockTime.hours >= 12) ? "PM" : "AM"
     })
 
+
+/**
+ * High order functions
+ */
+
 const display = target => time => target(time)
 
 const formatClock = format => 
@@ -41,6 +52,10 @@ const prependZero = key => clockTime =>
             clockTime[key]
     })
 
+/**
+ * compose function
+ * @param {} fns 
+ */
 const compose = (...fns) => 
     (arg) =>
         fns.reduce(
