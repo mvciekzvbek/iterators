@@ -46,7 +46,7 @@ var App = function () {
 	};
 };
 
-(function (window) {
+(function () {
 	var app = new App();
 	app.init();
-})(window);
+})();

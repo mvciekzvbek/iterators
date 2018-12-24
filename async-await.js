@@ -13,7 +13,7 @@ async function main () {
     var one = await asyncMethod('Open DB Connection', 0)
     var two = await asyncMethod('Find user', one)
     var three = await asyncMethod('Validate user', two)
-    var four = await syncMethod('Do stuff', three);
+    var four = await asyncMethod('Do stuff', three);
 }
 
 main();
