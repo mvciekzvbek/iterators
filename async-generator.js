@@ -1,14 +1,9 @@
 const URL = 'https://pokeapi.co/api/v2/pokemon/pikachu';
 
 function fetchData () {
-  fetch(URL)
+  return fetch(URL)
     .then(response => response.json())
-    .then((data) => {
-      it.next(data)
-    })
-    .catch((error) => {
-      it.throw(error)
-    })
+    .catch((error) => error)
 }
 
 function *main () {
@@ -22,4 +17,10 @@ function *main () {
 
 var it = main();
 
-it.next()
+var p = it.next().value;
+
+p.then((result) => {
+  it.next(result)
+}, (error) => {
+  it.throw(err)
+})
